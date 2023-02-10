@@ -1,92 +1,101 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="style.css">
-	<title>About Ella Burdin</title>
+	<title>Contact Ella Burdin</title>
 	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
-
-	<style type="text/css">
-		#bio {
-			display: inline-block;
-			max-width: 100%;
-			width: auto;
-			margin-right: auto;
-			margin-left: auto;
-			font-family: fantasy;
-			font-size: 20px;
-			background-color: lightcoral;
-			line-height: 40px;
-			padding: 10px;
-			vertical-align: top;
-		}
-		img 
-		{
-		max-width: 60%;
+	<style>
+	<meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+	#headtable {
+		max-width: 100%;
+		width: 100%;
+		text-decoration: none;
+	}
+	.name {
+		font-family: serif;
+		display: inline-block;
+		font-size: 30px;
 		width: auto;
-		max-height: 50%;
-		height: auto;
-		display: inline;
-		padding-left: 3%;
-		padding-bottom: 1%;
-		padding-right: 0px;
-		margin-right: 0px;
-		padding-top: 3%;
-		}
-		@media (max-width: 700px) { 
-		img {
+	}
+	.box {
+		display: inline-block;
+		font-size: 20px;
+		width: auto;
+	}
+	#info {
+		background-color: lightcoral;
 		max-width: 100%;
 		width: auto;
-		height: auto;
+		padding-left: 5%;
+		padding-right: 5%;
+		padding-bottom: 2%;
+		padding-top: 2%;
+		margin-left:auto;	
+		margin-right: auto;
+		font-size: 30px;
+		text-align: left;
+	}
+	#submit {
+		font-family: fantasy;
+		font-size: 30px;
+		background-color: lightcoral;
 		display: block;
-		padding-left: 1%;
-		padding-bottom: 1%;
-		padding-right: 1%;
-		}
-		#bio {
-			display: block;
-			max-width: 100%;
-			width: 100%;
-			margin-right: auto;
-			margin-left: auto;
-			font-family: fantasy;
-			font-size: 20px;
-			background-color: lightcoral;
-			line-height: 40px;
-			padding: 10px;
-			vertical-align: top;
-		}
-		}
-	</style>
+		margin-top: 10px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+</style>
 </head>
+
 <body>
 <header>
 	<div id='content'>
-	<div id="ella">
-		<a href="https://veraychoi.github.io/WebProgramming/ella.html">Ella Burdin</a>
-	</div>
-	<div id="alignnav">
-		<ul id="nav"}>
-			<li><a href="#">About &nbsp &nbsp </a></li>
-			<li>Portfolio &nbsp &nbsp</li>
-			<li><a href="https://veraychoi.github.io/WebProgramming/contact.html">Contact</a></li>
-		</ul>
-	</div>		
+		<table id="headtable">
+		
+			<tr>
+				<th id = "ella"><a href="https://veraychoi.github.io/WebProgramming/ella.html">Ella Burdin</a></th>
+			<th id = "alignnav">	
+			<ul id="nav"}>
+				<li><a href="https://veraychoi.github.io/WebProgramming/about.html">About &nbsp &nbsp </a></li>
+				<li><a href="#">Portfolio &nbsp &nbsp</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+			</th>
+			</tr>
+		</table>
+		
 	</div> <!-- end content-->
-	<table>
-		<tr>
-			<td>
-				<img src="ella.jpg"/>
-			</td>
-			<td>
-				<div id="bio">
-		Ella is currently a dual-degree student at the School of the Museum of Fine Arts and Tufts University. She pushes the boundaries of portrait painting to express human expression in still form, and her styles include abstract art, figurative, and expressionism.  
-	</div>
-			</td>
-		</tr>
-	</table>
-
-	
-	
+	<!-- sdfj -->
 </header>
+	<form method="get" id="contact" name="contact">
+		<table id="info">
+			<tr>
+				<th>
+					<label for="firstname" class = "name"> First Name: </label>
+					<input type="text" name="firstname" id="firstname" class="box">
+				</th>
+				<th>
+					<label for="lastname" class="name"> Last Name: </label>
+					<input type="text" name="lastname" id="lastname" class="box">
+				</th>
+			</tr>
+			<tr> 
+				<th>
+				<label for="email"> Email: </label>
+				<br/>
+				<input type="text" name="email" id="email" class="box">
+				</th>
+				
+			</tr>
+			<tr> <th>
+				<label for="msg"> Message: </label>
+				<br/>
+				<textarea name="msg" id="msg" class="box" rows="5">
+				</textarea>
+			</th></tr>
+		</table>
+		<input type="submit" id="submit" name="submit" onclick="alert('Thank You!')">
+	</form>
+
 </body>
 <footer id="foot">
 	<table>
