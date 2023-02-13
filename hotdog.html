@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style type="text/css">
+		h2 {
+			text-align: center;
+			font-style: oblique;
+		}
+		body {
+			font-family: serif;
+			font-size: 20px;
+			background-color: lightgoldenrodyellow;
+		}
+		img {
+			margin-top: 100px;
+			display: block;
+			width: 250px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+
+<h2>Joe's Hotdog Stand</h2>
+
+
+<script>
+order = new Array(0, 0, 0)
+document.write("Welcome to Joe's Hotdog Stand!");
+order[0] = prompt("How many hotdogs would you like?", "0");
+order[1] = prompt("How many orders of fries?");
+order[2] = prompt("How many sodas do you want?");
+
+document.write("<br>");
+document.write("You ordered " + Math.round(parseInt(order[0])) + " hotdogs, " + Math.round(parseInt(order[1])) + " french fries, and " + Math.round(parseInt(order[2])) + " drinks.");
+subtotal = Math.round(100*(parseInt(order[0]) * 4 + parseInt(order[1]) * 3.5 + parseInt(order[2]) * 1.75))/100;
+document.write("Your subtotal is $" + subtotal + ". <br>");
+if (subtotal > 20 || subtotal == 20) 
+{
+	discount = Math.round(subtotal *0.1 *100)/100;
+	subtotal = 0.9 * subtotal;
+	document.write("Because your subtotal is at least $20.00, you will receive a -$" + discount + " discount. <br>");
+}
+document.write("Tax: $" + Math.round(subtotal * 0.0625 * 100)/100 + "<br>");
+subtotal = Math.round(subtotal * 1.0625*100)/100;
+document.write("Total: $" + subtotal);
+</script>
+<img src="hotdog.gif">
+
+</body>
+</html>
