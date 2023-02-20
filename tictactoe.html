@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tic Tac Toe!</title>
+	<style type="text/css">
+		#row0, #row1, #row2
+		{
+			background-color: blueviolet;
+			border-width: 10px;
+			border-style: solid;
+			border-color: paleturquoise;
+			width: 40%;
+			height: 50%;
+
+			margin-left: auto;
+			margin-right: auto;
+			text-align: center;
+		}
+		#row0 {
+			margin-top: 2%;
+			border-style: solid solid none solid;
+		}
+		#row1 {
+			border-style: none solid none solid;
+		}
+		#row2 {
+			margin-bottom: 1%;
+			border-style: none solid solid solid;
+		}
+		#button {
+			
+			display: inline-block;
+			width: 33.333%;
+			height: 0;
+			padding-top: 14%;
+			padding-bottom: 14%;
+			margin-left: auto;
+			margin-right: auto;
+			font-size: 30px;
+			text-align: center;
+			background-color: lightgray;
+		}
+		h1 {
+			text-align: center;
+			margin: 0;
+			margin-top: 10px;
+			display: block;
+		}
+		#turn {
+			text-align: center;
+			font-size: 20px;
+		}
+		#newgame {
+			text-align: center;
+			background-color: paleturquoise;
+			display: block;
+			font-size: 20px;
+			width: 25%;
+			border-style: solid;
+			border-color: black;
+			border-width: 2px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+	
+	</style>
+	<script type="text/javascript">
+		window.onload = function () {
+			var player = "X";
+			var moves = 0;
+			var gameOver = false;
+			//Each row, column, and diagonal is an element in the
+			//win array, and if an element reaches 3 or -3 then someone has won
+			var win = Array(8).fill(0);
+			for (let i = 0; i < 3; i++) {
+				for (let j = 0; j < 3; j++) {
+					
+					btn = document.getElementsByName("button" + i + j);
+					btn[0].onclick = function () {
+						if (!gameOver){
+						btn = document.getElementsByName("button" + i + j);
+					if (btn[0].innerText=="T") {
+						btn[0].innerText = player;
+						btn[0].style.color = "black";
+						moves++;
+						if (player=="X"){
+							win[i]++;
+							win[j+3]++;
+							if (i==j) {
+								win[6]++;
+							}
+							if ((i+j)==2) {
+								win[7]++;
+							}
+							player = "O";
+						}
+						else{
+							win[i]--;
+							win[j+3]--;
+							if (i==j) {
+								win[6]--;
+							}
+							if ((i+j)==2) {
+								win[7]--;
+							}
+							player="X";
+						}
+						document.getElementById("turn").innerText = "Player " + player + "'s turn";
+						for (let n = 0; n <8; n++) {
+							if (win[n]==3) {
+								document.getElementById("turn").innerText = "Player X won!";
+								gameOver = true;
+							}
+							else if (win[n]==(-3)) {
+								document.getElementById("turn").innerText = "Player O won!";
+								gameOver = true;
+							}
+						}
+						if (!gameOver && moves>8) {
+							document.getElementById("turn").innerText = "It's a tie!";
+							gameOver=true;
+						}
+						}
+					}
+				}
+				}
+			}
+		}	
+	</script>
+</head>
+<body>
+
+<h1>Tic Tac Toe - Let's Go!</h1>
+<div id = "turn">
+	Player X's turn
+</div>
+<script>
+	for (let i = 0; i<3; i++) 
+	{
+	const box = document.createElement("div");
+	box.id = "row" + i;
+	box.name = "row" + i;
+	box.style.display = "block";
+	
+	document.body.appendChild(box);
+	for (let j = 0; j < 3; j++) {
+	const button = document.createElement("button");
+	button.id = "button";
+	button.value = "none";
+	button.innerText = "T";
+	button.style.color="lightgrey";
+	button.name = "button" + i + j;
+	box.appendChild(button); 
+	}
+	}
+	
+</script>
+	<button id= "newgame" onClick="window.location.reload();">New Game</button>
+</body>
+</html>
