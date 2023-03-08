@@ -1,2 +1,91 @@
-[
+[{
+	"title": "It's Called: Freefall",
+	"artist": ["Rainbow Kitten Surprise"],
+	"genre": ["rock"],
+	"year": "2018",
+},
+{
+	"title": "Cocaine Jesus",
+	"artist": ["Rainbow Kitten Surprise"],
+	"genre": ["rock"],
+	"year": "2015",
+},
+{
+	"title": "Fourth of July",
+	"artist": ["Sufjan Stevens"],
+	"genre": ["indie", "mellow"],
+	"year": "2015",
+},
+{
+	"title": "Lorde",
+	"artist": ["Supercut"],
+	"genre": ["indie", "dance pop"],
+	"year": "2017",
+},
+{
+	"title": "Brooklyn Bridge to Chorus",
+	"artist": ["The Strokes"],
+	"genre": ["rock"],
+	"year": "2020",
+},
+{
+	"title": "Boy's a liar Pt. 2",
+	"artist": ["Pink Pantheress", "Ice Spice"],
+	"genre": ["pop"],
+	"year": "2023",
+},
+{
+	"title": "Tales of Dominica",
+	"artist": ["Lil Nas X"],
+	"genre": ["pop"],
+	"year": "2021",
+},
+{
+	"title": "Miley Cyrus",
+	"artist": ["Angels Like You"],
+	"genre": ["pop"],
+	"year": "2023",
+},
+{
+	"title": "SZA",
+	"artist": ["Kill Bill"],
+	"genre": ["pop"],
+	"year": "2022",
+},
+{
+	"title": "Metamodernity",
+	"artist": ["Vansire"],
+	"genre": ["indie"],
+	"year": "2019",
+},
+{
+	"title": "This December",
+	"artist": ["Ricky Montgomery"],
+	"genre": ["pop"],
+	"year": "2016",
+},
+{
+	"title": "Egg in the Backseat",
+	"artist": ["Em Beihold"],
+	"genre": ["pop"],
+	"year": "2022",
+},
+{
+	"title": "Daylight",
+	"artist": ["Joji", "Diplo"],
+	"genre": ["pop", "indie"],
+	"year": "2020",
+},
+{
+	"title": "Encore",
+	"artist": ["Yoasobi"],
+	"genre": ["j-pop"],
+	"year": "2021",
+},
+{
+	"title": "Lalala",
+	"artist": ["Y2K", "bbno$"],
+	"genre": ["pop"],
+	"year": "2019",
+}
 ]
