@@ -2,16 +2,178 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="jsonstyle.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+	<script language="javascript">
+	
+	$(document).ready(
+	function () {
+		$.getJSON("https://veraychoi.github.io/WebProgramming/songlist2.json",
+		function (data) {
+			str = JSON.stringify(data);
+			document.getElementById('raw').innerHTML = str;
+		}
+		);
+		
+	})
+</script>
+<script type="text/javascript">
+	songs = [{
+	"title": "It's Called: Freefall",
+	"artist": ["Rainbow Kitten Surprise"],
+	"genre": ["rock"],
+	"year": "2018",
+},
+{
+	"title": "Cocaine Jesus",
+	"artist": ["Rainbow Kitten Surprise"],
+	"genre": ["rock"],
+	"year": "2015",
+},
+{
+	"title": "Fourth of July",
+	"artist": ["Sufjan Stevens"],
+	"genre": ["indie", "mellow"],
+	"year": "2015",
+},
+{
+	"title": "Lorde",
+	"artist": ["Supercut"],
+	"genre": ["indie", "dance pop"],
+	"year": "2017",
+},
+{
+	"title": "Brooklyn Bridge to Chorus",
+	"artist": ["The Strokes"],
+	"genre": ["rock"],
+	"year": "2020",
+},
+{
+	"title": "Boy's a liar Pt. 2",
+	"artist": ["Pink Pantheress", "Ice Spice"],
+	"genre": ["pop"],
+	"year": "2023",
+},
+{
+	"title": "Tales of Dominica",
+	"artist": ["Lil Nas X"],
+	"genre": ["pop"],
+	"year": "2021",
+},
+{
+	"title": "Miley Cyrus",
+	"artist": ["Angels Like You"],
+	"genre": ["pop"],
+	"year": "2023",
+},
+{
+	"title": "SZA",
+	"artist": ["Kill Bill"],
+	"genre": ["pop"],
+	"year": "2022",
+},
+{
+	"title": "Metamodernity",
+	"artist": ["Vansire"],
+	"genre": ["indie"],
+	"year": "2019",
+},
+{
+	"title": "This December",
+	"artist": ["Ricky Montgomery"],
+	"genre": ["pop"],
+	"year": "2016",
+},
+{
+	"title": "Egg in the Backseat",
+	"artist": ["Em Beihold"],
+	"genre": ["pop"],
+	"year": "2022",
+},
+{
+	"title": "Daylight",
+	"artist": ["Joji", "Diplo"],
+	"genre": ["pop", "indie"],
+	"year": "2020",
+},
+{
+	"title": "Encore",
+	"artist": ["Yoasobi"],
+	"genre": ["j-pop"],
+	"year": "2021",
+},
+{
+	"title": "Lalala",
+	"artist": ["Y2K", "bbno$"],
+	"genre": ["pop"],
+	"year": "2019",
+}]
+</script>
 </head>
 </html>
 <body>
-<script language="javascript">
-	$.get("https://veraychoi.github.io/WebProgramming/songlist2.json",
-		function (data) {
-			info = JSON.stringify(data);
-			document.write(info);
+<script type="text/javascript">
+	
+	var genres = [];
+	document.write('<div id = "raw"></div>');
+	for (let i = 0; i < songs.length; i++) {
+		let j = songs[i];
+		for (let k = 0; k < j['genre'].length; k++){
+			if (genres.indexOf(j['genre'][k]) == -1) 
+				genres.push(j['genre'][k]);
 		}
-		)
+	}
+	var songGenres = Array(genres.length);
+	for (let i = 0; i < genres.length; i++) {
+		songGenres[i] = document.getElementsByClassName(genres[i]);
+	}
+	document.write("<select id='dropdown' size='1'>");
+	genres.forEach(element =>{
+		document.write("<option>" + element + "</option>");
+	})
+	document.write("</select>");
+	document.write('<input type = "button" id = "press" value = "Filter" /><br/>');
+	var dropdown = document.getElementById('dropdown');
+	document.getElementById('press').onclick = function () {
+		
+		for (let i = 0; i < genres.length; i++) {	
+			for (let k = 0; k < songGenres[i].length;k++)
+				songGenres[i][k].style.display="none";
+		}
+		for (let i = 0; i < genres.length; i++) {
+			if (i == dropdown.selectedIndex){
+				for (let k = 0; k < songGenres[i].length;k++) {
+					songGenres[i][k].style.display= "inline-block";
+				}
+			}
+		}
+	}
+
+	for (let i = 0; i < songs.length; i++) {
+		j = songs[i];
+		document.write("<div class = 'song");
+		for (let k=0; k < j['genre'].length; k++) {
+			document.write(" " + j['genre'][k]);
+		}
+		document.write("'>");
+		document.write("<div class = 'title'>" + j['title']+"</div>");
+		document.write("<div class = 'artist'> Artist: ") 
+		for (let k=0; k < j['artist'].length; k++) {
+			if (k > 0) 
+				document.write(", ");
+			document.write(j['artist'][k]);
+		}
+		document.write("</div>");
+		document.write("<div class = 'genre'>Genre: ") ;
+		for (let k=0; k < j['genre'].length; k++) {
+			if (k > 0) 
+				document.write(", ");
+			document.write(j['genre'][k]);
+		}
+		document.write("</div>");
+		document.write("<div class = 'year'>released " + j['year']+"</div>");
+		document.write("</div>");
+	}
+	
 </script>
 </body>
