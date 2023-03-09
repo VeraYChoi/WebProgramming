@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+	<meta name=‘viewport’ content='width=device-width, initial-scale=1'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+	<style type="text/css">
+		body {
+			font-family: sans-serif;
+			background: #203C5A;
+		}
+		.header {
+			width: 100%;
+		}
+		h1 {
+			display: block;
+			text-align: center;
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: 20px;
+			margin-bottom: 20px;
+			color: #203C5A;
+			font-size: 50px;
+			background-color: #FFF8F0;
+			width: 22%;
+			border: 5px solid #203C5A;
+			border-radius: 30px;
+		}
+		table {
+			width: 	100%;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: 	center;
+			border: 1px solid black;
+			border-collapse: 	collapse;
+		}
+		tr {
+			border: 1px solid black;
+			text-align: center;
+			display: inline-block;
+			justify-content: center;
+		}
+		td {
+			border: 1px solid black;
+			margin-right: 0;
+			margin-left: 	0;
+			display: inline;
+			justify-content: 	space-between;
+		}
+		img {
+			width: 	100%;
+			height: 70%;
+			align-self: center;
+			align-content: center;
+			display: inline;
+			margin-bottom: 	5px;
+		}
+		.bios {
+			display: inline-block;
+			background-color: #FFF8F0;
+			vertical-align: top;
+			width: 	100%;
+			max-width: 10%;
+			text-align: center;
+			padding-top: 15px;
+			padding-right: 25px;
+			padding-left: 25px;
+			padding-bottom: 10px;
+			margin-left: 10%;
+			border: 5px solid #FFF8F0;
+			border-radius: 50px;
+			margin-right: 0%;
+			justify-content: space-around;
+			font-size: 	20px;
+			margin-top: 10px;
+			margin-bottom: 	5px;
+		}
+		.names {
+			font-size: 	30px;
+		}
+		@media (max-width: 700px) {
+			.bios {
+				display: block;
+				width: 100%;
+				max-width:  400px;
+				margin-left: auto;
+				margin-right: auto;
+				font-size: 30px;
+				padding-right: 15px;
+				padding-left: 15px;
+				
+			}
+		}
+	</style>
+  	
+  </script>
+  
+</head>
+<body>
+	
+	 <div class="header">
+            
+            <div class="sidebar" id="sidebar">
+                <a><span class="close" id="close">&times;</span></a>
+                <ul>
+                    <li><a href="index.html">Home Page</a></li>
+                    <li><a href="contact_form.html">Contact Us</a></li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                    <li><a href="webber.html">Payment Plans</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="othersites.html">Websites We Built</a></li>
+                    <li><a href="process.html">Our Services</a></li>
+                </ul>
+
+            </div>
+            <div class="logo">
+                <a href="index.html"><img id="logo_img" src="images/swico.ico"></a>
+            </div>
+            
+            <div class="open_sidebar">
+                <span class="toggler" id="toggler">&#9776;</span>
+            </div>
+            
+            
+            
+        </div>
+
+        <script>
+            
+            let sidebar = document.getElementById("sidebar");
+            let toggler = document.getElementById("toggler");
+            let closer = document.getElementById('close');
+            
+            closer.onclick = function() {
+                sidebar.style.width = "0px";
+            }
+
+            toggler.onclick = function() {
+                sidebar.style.width = "300px";
+            }
+        </script>
+	<h1>Our Team!</h1>
+		
+	<script type="text/javascript">
+		var images = ['dilanur.jpg', 'tali2.jpg', 'mira.png', 'justme.jpg'];
+		var bios = Array(4);
+		var names = ['Dilanur Bayraktar', 'Tali L. Falk-Judson', 'Mira R. Jain', 'Vera Choi']
+		bios[0] = "Dilanur is the CEO and founder of Webber. Since " + 
+		"she first began Webber, she has grown the company from a small business " +
+		"to a successful corporation.";
+		bios[1] = "Tali is the graphic designer behind Webber. He " +
+		"puts together the visual aspects of Webber's products and is the artistic " +
+		"backing to the operation.";
+		bios[2] = "Mira is the head of treasury at Webber. She keeps operations " +
+		"running smoothly by filing taxes, managing employee salaries, and keeping "
+		+ "scrupulous financial records.";
+		bios[3] = "Vera is the head of customer service at Webber. She communicates "+
+		"with clients to ensure they are aware of the entire design process, " +
+		"and answers their questions.";
+		for (let i = 0; i < 4; i++) {
+			document.write("<div class = 'bios'><div class = 'names'>" + names[i] 
+				+ "</div><br/><img src='images/" + images[i] + "'/>	<br/>"+
+				bios[i] +"</div>");
+		}
+
+	</script>
+	<script type="https"></script>
+</body>
+<footer>
+    <ul display="block">
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./about.html">About</a></li>
+        <li><a href="./testimonials.html">FAQ</a></li>
+        <li><a href="./payment.html">Buy</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+    </ul>
+</footer>
