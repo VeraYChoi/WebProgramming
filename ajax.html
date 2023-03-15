@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Numbers API Assignment</title>
+	<style type="text/css">
+		div {
+			background-color: salmon;
+			border: 2px solid black;
+			font-family: monospace;
+			padding: 3px;
+			width: 80%;
+			font-size: 20px;
+			margin-left: auto;
+			margin-right: auto;
+		}
+	</style>
+</head>
+<body>
+	<div id="text">Here is a fun fact about 17! <br/><br/></div>
+<script type="text/javascript">
+	function reqData() {
+		var requester = new XMLHttpRequest();
+		if (!requester) {
+			alert("Couldn't make the request"); return;
+		}
+		requester.onreadystatechange = function() {
+			if (requester.readyState==4) {
+				document.getElementById("text").innerHTML += JSON.parse(requester.responseText)['text'];
+			}
+		}
+		requester.open("GET", "http://numbersapi.com/17/trivia?json", true)
+		requester.send();
+	}
+	reqData();
+</script>
+<br/>
+<div id='math'>Here is a math (also fun) fact about 17! <br/><br/></div>
+<script type="text/javascript">
+	
+	  res = fetch("http://numbersapi.com/17/math?json")
+		.then (res => res.text())
+		.then (data => {
+			document.getElementById('math').innerHTML+=
+			JSON.parse(data)['text'];
+		})
+		.catch (error => console.log(error))	
+
+</script>
+<br/><br/>
+<div>
+	This API produces random facts about numbers which can have the category math, trivia, or be related to a date or year. <br/>
+	<br/>
+	I found this at the website <a href="http://numbersapi.com/#random/math"> NumbersAPI</a>. <br/><br/>
+	In my API request, I had the option to specify whether I wanted a fact about a specific number, a range of numbers, or a random number. I also had the option to specify a fact related to math, trivia, a date, or a year. I have chosen to display a trivia and math fact about 17, the best number. <br/><br/>
+	This API could be helpful if someone wanted to display a random number fact related to the current day on a website, or if someone wanted to make a website that lets anyone find a number fact related to their birthday. 
+</div>
+</body>
+</html>
