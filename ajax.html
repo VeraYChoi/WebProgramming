@@ -28,10 +28,10 @@
 		}
 		requester.onreadystatechange = function() {
 			if (requester.readyState==4) {
-				document.getElementById("text").innerHTML += JSON.parse(requester.responseText)['text'];
+				document.getElementById("text").innerHTML += JSON.parse(requester.responseText)['activity'];
 			}
 		}
-		requester.open("GET", "http://numbersapi.com/17/trivia?json", true)
+		requester.open("GET", "http://www.boredapi.com/api/activity/", true)
 		requester.send();
 	}
 	reqData();
