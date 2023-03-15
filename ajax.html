@@ -31,7 +31,7 @@
 				document.getElementById("text").innerHTML += JSON.parse(requester.responseText)['activity'];
 			}
 		}
-		requester.open("GET", "http://www.boredapi.com/api/activity/", true)
+		requester.open("GET", "https://www.boredapi.com/api/activity/", true)
 		requester.send();
 	}
 	reqData();
@@ -40,11 +40,11 @@
 <div id='math'>Here is a math (also fun) fact about 17! <br/><br/></div>
 <script type="text/javascript">
 	
-	  res = fetch("http://numbersapi.com/17/math?json")
+	  res = fetch("https://www.boredapi.com/api/activity/?type=recreational")
 		.then (res => res.text())
 		.then (data => {
 			document.getElementById('math').innerHTML+=
-			JSON.parse(data)['text'];
+			JSON.parse(data)['activity'];
 		})
 		.catch (error => console.log(error))	
 
