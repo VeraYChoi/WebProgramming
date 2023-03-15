@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Numbers API Assignment</title>
+	<title>API Assignment</title>
 	<style type="text/css">
 		div {
 			background-color: salmon;
@@ -19,7 +19,7 @@
 	</style>
 </head>
 <body>
-	<div id="text">Here is a fun fact about 17! <br/><br/></div>
+	<div id="text">Are you bored? Here's a recreational activity!<br/><br/></div>
 <script type="text/javascript">
 	function reqData() {
 		var requester = new XMLHttpRequest();
@@ -31,16 +31,16 @@
 				document.getElementById("text").innerHTML += JSON.parse(requester.responseText)['activity'];
 			}
 		}
-		requester.open("GET", "https://www.boredapi.com/api/activity/", true)
+		requester.open("GET", "https://www.boredapi.com/api/activity/?type=recreational", true)
 		requester.send();
 	}
 	reqData();
 </script>
 <br/>
-<div id='math'>Here is a math (also fun) fact about 17! <br/><br/></div>
+<div id='math'>Do you have a friend? Here's an activity for two participants!<br/><br/></div>
 <script type="text/javascript">
 	
-	  res = fetch("https://www.boredapi.com/api/activity/?type=recreational")
+	  res = fetch("https://www.boredapi.com/api/activity?participants=2")
 		.then (res => res.text())
 		.then (data => {
 			document.getElementById('math').innerHTML+=
@@ -51,11 +51,11 @@
 </script>
 <br/><br/>
 <div>
-	This API produces random facts about numbers which can have the category math, trivia, or be related to a date or year. <br/>
+	This API gives activities that you can do. These activities can be completely random, be sorted by type, number of participants, price/price range, and accessibility/accessibility range. <br/>
 	<br/>
-	I found this at the website <a href="http://numbersapi.com/#random/math"> NumbersAPI</a>. <br/><br/>
-	In my API request, I had the option to specify whether I wanted a fact about a specific number, a range of numbers, or a random number. I also had the option to specify a fact related to math, trivia, a date, or a year. I have chosen to display a trivia and math fact about 17, the best number. <br/><br/>
-	This API could be helpful if someone wanted to display a random number fact related to the current day on a website, or if someone wanted to make a website that lets anyone find a number fact related to their birthday. 
+	I found this at the website <a href="https://www.boredapi.com/">https://www.boredapi.com/</a>. <br/><br/>
+	In my API request, I specified a recreational type activity for my first call and 2 participants for my second call. I could have requested a different type of activity like 'educational' or a different number of people. <br/><br/>
+	This API could be helpful if someone were bored and wanted to find an activity to do that would also be productive and educational, or perhaps if a group of people of a specific number wanted to find an activity to do together. 
 </div>
 </body>
 </html>
