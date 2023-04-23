@@ -16,4 +16,4 @@ http.createServer(function (req, res) {
   res.write("<br> <input type='submit' value = 'Submit Here!'></form>");
   }
   res.end();
-}).listen(8080);
+}).listen(process.env.PORT || 8080 || 3000);
