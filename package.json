@@ -1,0 +1,19 @@
+{
+  "name": "web-programming",
+  "version": "1.0.0",
+  "description": "",
+  "main": "about.html",
+  "scripts": {
+    "test": "dir"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VeraYChoi/WebProgramming.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VeraYChoi/WebProgramming/issues"
+  },
+  "homepage": "https://github.com/VeraYChoi/WebProgramming#readme"
+}
