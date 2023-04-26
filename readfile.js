@@ -6,6 +6,7 @@ var readline = require('readline');
 
 
 http.createServer(function (req, res) {
+    fs.access('./companies.csv', err => err ? 'does not exist' : 'exists');
     var stream = fs.createReadStream("./companies.csv");
     rl = readline.createInterface({ input: stream });
     let data = [];
@@ -16,6 +17,6 @@ http.createServer(function (req, res) {
     for (let i = 0; i < data.length; i++) {
         res.write(data[i]);
     }
-    res.write("read!");
+    res.write("done!");
   res.end();
 }).listen(process.env.PORT || 8080 || 3000);
