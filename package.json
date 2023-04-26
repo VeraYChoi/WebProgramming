@@ -1,10 +1,10 @@
 {
   "name": "web-programming",
   "version": "1.0.0",
-  "description": "",
+  "description": "<div align=\"center\">\r     <a href=\"https://php.net\">\r         <img\r             alt=\"PHP\"\r             src=\"https://www.php.net/images/logos/new-php-logo.svg\"\r             width=\"150\">\r     </a>\r </div>",
   "main": "about.html",
   "scripts": {
-    "start": "node stock_ticker.js",
+    "start": "node hello.js",
     "test": "dir"
   },
   "repository": {
@@ -16,5 +16,12 @@
   "bugs": {
     "url": "https://github.com/VeraYChoi/WebProgramming/issues"
   },
-  "homepage": "https://github.com/VeraYChoi/WebProgramming#readme"
+  "homepage": "https://github.com/VeraYChoi/WebProgramming#readme",
+  "dependencies": {
+    "mongodb": "^5.3.0"
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {}
 }
