@@ -4,7 +4,7 @@
   "description": "",
   "main": "about.html",
   "scripts": {
-    "start": "node hello.js",
+    "start": "node readfile.js",
     "test": "dir"
   },
   "repository": {
